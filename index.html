@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ئاشتی لەگەڵ تۆ ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    background:linear-gradient(180deg,#ffd6e5,#fff0f6,#ffe1ec);
+    color:#542638;
+}
+
+/* Background hearts */
+.hearts{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    font-size:25px;
+    animation:float 8s linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    15%{opacity:.8;}
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Main */
+.container{
+    position:relative;
+    z-index:2;
+    width:92%;
+    max-width:650px;
+    margin:auto;
+    padding:25px 0 50px;
+}
+
+/* Hero */
+.hero{
+    text-align:center;
+    padding:25px 15px;
+}
+
+.hero h1{
+    font-size:32px;
+    color:#d6336c;
+    margin-bottom:10px;
+    text-shadow:0 3px 10px #ffabc7;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* Main card */
+.card{
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(12px);
+    border-radius:30px;
+    padding:25px;
+    box-shadow:
+        0 15px 45px rgba(170,50,90,.2),
+        inset 0 0 0 2px rgba(255,255,255,.7);
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#d6336c;
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.message{
+    font-size:18px;
+    line-height:2;
+}
+
+/* Main image */
+.main-img{
+    width:100%;
+    border-radius:25px;
+    margin:20px 0;
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+
+/* Gallery */
+.gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:20px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+}
+
+/* Apology */
+.apology{
+    background:linear-gradient(135deg,#fff,#ffe4ef);
+    border:2px solid #ffb4cd;
+}
+
+.apology p{
+    font-size:19px;
+    line-height:2;
+}
+
+/* Buttons */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+button{
+    border:none;
+    padding:14px 30px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.yes{
+    background:#ff4f87;
+    color:white;
+    box-shadow:0 8px 20px rgba(255,79,135,.35);
+}
+
+.no{
+    background:#fff;
+    color:#d6336c;
+    border:2px solid #ff9fbd;
+}
+
+button:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+/* Result */
+.result{
+    display:none;
+    margin-top:25px;
+    padding:20px;
+    border-radius:25px;
+    background:#fff;
+    animation:pop .5s ease;
+}
+
+@keyframes pop{
+    0%{transform:scale(.7);opacity:0}
+    100%{transform:scale(1);opacity:1}
+}
+
+.result h3{
+    color:#d6336c;
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.result p{
+    line-height:2;
+    font-size:18px;
+}
+
+/* Footer */
+.footer{
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+    color:#9a6075;
+}
+
+/* Stars */
+.star{
+    position:fixed;
+    color:white;
+    font-size:20px;
+    animation:blink 2s infinite alternate;
+    z-index:1;
+}
+
+@keyframes blink{
+    from{opacity:.2;transform:scale(.7)}
+    to{opacity:1;transform:scale(1.2)}
+}
+
+/* Mobile */
+@media(max-width:500px){
+    .hero h1{
+        font-size:27px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .message,
+    .apology p{
+        font-size:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+    <div class="heart" style="left:5%;animation-delay:0s;">❤️</div>
+    <div class="heart" style="left:20%;animation-delay:2s;">💗</div>
+    <div class="heart" style="left:40%;animation-delay:4s;">💕</div>
+    <div class="heart" style="left:65%;animation-delay:1s;">💖</div>
+    <div class="heart" style="left:85%;animation-delay:3s;">❤️</div>
+</div>
+
+<div class="star" style="top:12%;left:12%;">✦</div>
+<div class="star" style="top:25%;right:10%;">✧</div>
+<div class="star" style="top:50%;left:7%;">✦</div>
+<div class="star" style="top:70%;right:8%;">✧</div>
+
+<div class="container">
+
+    <section class="hero">
+        <h1>سڵاو جوانترین کچی جیهان ❤️</h1>
+        <p>
+            ئەمجارە پاپای هاتووە بۆ ئاشتی کردنەوە 🥺💗
+        </p>
+    </section>
+
+    <div class="card">
+
+        <!-- وێنەی سەرەکی -->
+        <img
+            class="main-img"
+            src="IMG_6277.jpeg"
+            alt="Bubu Dudu"
+        >
+
+        <h2>زەینۆ خان 🥺❤️</h2>
+
+        <p class="message">
+            دەزانم توڕەیت لە پاپا...
+            <br>
+            و دەزانم ئەو قسەیەی وتم ڕەنگە دڵت خۆش نەکردبێت.
+            <br><br>
+
+            بەڵام بەڕاستی مەبەستم ئەوە نەبوو دڵت بشکێنم.
+            <br>
+            تەنها دەمەوێت بزانیت کە پاپا پشیمانە. 🥺
+        </p>
+
+    </div>
+
+    <!-- Gallery -->
+    <div class="card">
+        <h2>یادگارییە جوانەکانمان 🐻💗</h2>
+
+        <div class="gallery">
+
+            <img src="IMG_6277.jpeg" alt="Bubu Dudu 1">
+
+            <img src="IMG_6276.jpeg" alt="Bubu Dudu 2">
+
+            <img src="IMG_6275.jpeg" alt="Bubu Dudu 3">
+
+            <img src="IMG_6274.jpeg" alt="Bubu Dudu 4">
+
+        </div>
+    </div>
+
+    <!-- Apology -->
+    <div class="card apology">
+
+        <h2>پرسیارێکی بچووک 🥺</h2>
+
+        <p>
+            زەینۆ خان...
+            <br><br>
+
+            لە پاپا خۆش دەبیت لەبەر ئەو هەڵەیە؟ 🥺❤️
+            <br><br>
+
+            پاپا بەڕاستی داوای لێبوردن دەکات.
+            <br>
+            نابێت قسەیەک ببێتە هۆی ئەوەی دڵت ناخۆش بێت. 💗
+        </p>
+
+        <div class="buttons">
+
+            <button class="yes" onclick="yesAnswer()">
+                بەڵێ ❤️
+            </button>
+
+            <button class="no" onclick="noAnswer()">
+                نەخێر 🥺
+            </button>
+
+        </div>
+
+        <div id="result" class="result"></div>
+
+    </div>
+
+    <div class="footer">
+        Made with ❤️ by Papa
+        <br>
+        🐻 × 🐰 = 💗
+    </div>
+
+</div>
+
+<script>
+
+function yesAnswer(){
+
+    const result = document.getElementById("result");
+
+    result.style.display = "block";
+
+    result.innerHTML = `
+        <h3>ئای دڵم 😭❤️</h3>
+
+        <p>
+            سوپاس بۆ دڵپاکیت زەینۆ خان 🥺💗
+            <br><br>
+            ئەم دیاریە بۆ تۆیە،
+            باشترین کەس لە ژیانم. ❤️
+            <br><br>
+            ئێستا ئاشتییە؟ 🐻💗
+        </p>
+    `;
+
+    createHearts();
+}
+
+
+function noAnswer(){
+
+    const result = document.getElementById("result");
+
+    result.style.display = "block";
+
+    result.innerHTML = `
+        <h3>تکایە تۆزێک زیاتر بیر بکەرەوە 🥺</h3>
+
+        <p>
+            پاپا نایەوێت بە هیچ شێوەیەک دڵت بشکێنێت.
+            <br><br>
+            ئەگەر هێشتا توڕەیت،
+            پاپا چاوەڕێ دەکات تا دڵت ئارام بێتەوە. ❤️
+            <br><br>
+            بەڵام تکایە لە کۆتاییدا یەک جار تریش بیر لە پاپا بکەرەوە. 🥺💗
+        </p>
+
+        <button class="yes" onclick="yesAnswer()">
+            باشە... بیر دەکەمەوە ❤️
+        </button>
+    `;
+}
+
+
+function createHearts(){
+
+    for(let i=0;i<20;i++){
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = ["❤️","💗","💕","💖","✨"]
+            [Math.floor(Math.random()*5)];
+
+        heart.style.position="fixed";
+        heart.style.left=Math.random()*100+"%";
+        heart.style.bottom="-30px";
+        heart.style.fontSize=(20+Math.random()*25)+"px";
+        heart.style.zIndex="999";
+        heart.style.pointerEvents="none";
+        heart.style.animation="float 4s linear forwards";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },4000);
+    }
+}
+
+</script>
+
+</body>
+</html>
